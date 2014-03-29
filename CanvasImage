@@ -1,7 +1,9 @@
 <!--IMAGE SRC: http://image.slidesharecdn.com/ppt-140328225625-phpapp01/95/slide-1-638.jpg?cb=1396065404 -->
+<!-- PREVIEW RESULTS: http://jsfiddle.net/parulguide/Yqpat/ -->
+
 <script type="text/javascript">
 $(function(){
-  var canvas=$("#canid").getContext("2d");
+  var canvas=document.getElementById("canid").getContext("2d");
   var image=new Image();
   image.onload=(function(){
       canvas.drawImage(this,0,0);
