@@ -1,0 +1,20 @@
+<!--IMAGE SRC: http://image.slidesharecdn.com/ppt-140328225625-phpapp01/95/slide-1-638.jpg?cb=1396065404 -->
+<script type="text/javascript">
+$(function(){
+  var canvas=$("#canid").getContext("2d");
+  var image=new Image();
+  image.onload=(function(){
+      canvas.drawImage(this,0,0);
+    });
+    image.src="http://image.slidesharecdn.com/ppt-140328225625-phpapp01/95/slide-1-638.jpg?cb=1396065404";
+
+});
+
+</script>
+
+<!--HTML 5 CANVAS IS USED TO DRAW GRAPHICS ON THE FLY.-->
+<!-- SUCCESS   : You are not able to see Canvas not supported message--> 
+
+<div>HTML5 Test!</div>
+
+<canvas id="canid" width="1024" height="640">canvas not supported!</canvas>
