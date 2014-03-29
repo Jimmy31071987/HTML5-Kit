@@ -1,16 +1,6 @@
-//HTML 5 CANVAS IS USED TO DRAW GRAPHICS ON THE FLY.
+<!--HTML 5 CANVAS IS USED TO DRAW GRAPHICS ON THE FLY.-->
+<!--CHECK CODE AT http://jsfiddle.net/parulguide/EhPmj/1/-->
 
-<html>
-<head>
-<title>HTML5 Test</title>
-</head>
-  
-<body>
-  
 <div>HTML5 Test!</div>
   
 <canvas id="mainScreen" width="1024" height="640">canvas not supported!</canvas>
-  
-</body>
-  
-</html>
