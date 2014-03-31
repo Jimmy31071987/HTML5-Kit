@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script> 
+        <script type="text/javascript">
+               var canvas=null;
+               $(function(){
+                    try{
+                       canvas=document.getElementById("canid").getContext("2d");
+                       var image=new Image();
+                       image.onload=function(){/* canvas.drawImage(this,0,0);*/
+                           var wcanvas=document.createElement("canvas");
+                           wcanvas.width=this.width;
+                           wcanvas.height=this.height;
+                           
+                           
+                           var canvas2=wcanvas.getContext("2d");
+                           canvas2.drawImage(this,0,0);
+                           
+                           var imageData=canvas2.getImageData(0,0,this.width,this.height);
+                           var imageDataLength=imageData.data.length;
+                           
+                           for(var i=3;i<length;i+=4){
+                               if(imageData.data[i-3]==106 && imageData.data[i-2]==76 && imageData.data[i-1]==48){
+                                   imageData.data[i]=0;
+                               }
+                               else if(imageData.data[i-3]==39 && imageData.data[i-2]==27 && imageData[i-1]==17){
+                                   imageData.data[i]=128;
+                               }
+                           }
+                           canvas2.putImageData(imageData,0,0);
+                           img=new Image();
+                           img.onload=function(){ canvas.drawImage(this,0,0); };
+                           img.src=wcanvas.toDataURL();
+                        };
+                       image.src="http://image.slidesharecdn.com/ppt-140328225625-phpapp01/95/slide-1-638.jpg?cb=1396065404";
+                       }
+                    catch(e){console.log(e);}
+                });
+        </script>
+        <title>CANVAS</title>
+    </head>
+    <body bgcolor="black">
+        <canvas id="canid" width="1024" height="640">
+            HTML5 is not Supported
+        </canvas>
+    </body>
+</html>
