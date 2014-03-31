@@ -10,8 +10,16 @@
              var ofreader=new FileReader();
              ofreader.readAsDataURL((element).files[0]);
              ofreader.onload=function(e){
-                $("#preview").html('<img src="'+e.target.result+'">');
+                $("#preview").html('<img src="'+e.target.result+'"> loading...');
              };
+             $.ajax({
+                type:"get",
+                dataType:"json",
+                success:function(d){
+                    $("#preview").html(d);
+                }
+                    
+             });
          }
      </script>
     
